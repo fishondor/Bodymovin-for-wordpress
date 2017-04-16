@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Disable browser caching of dialog window -->
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="expires" content="0" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </head>
+    <body>
+      <div class="container-fluid">
+        <div class="row">
+            <p id="fileHelp" class="form-text text-muted col-sm-12">
+              Leave these fields empty for 100% width and auto height. For fixed width or height, add your values with units. example: 150px, 70%, 1.5em etc.
+            </p>
+            <div class="input-group col-sm-12">
+              <input type="number" class="form-control size-params" id="width" placeholder="Width">
+              <div class="input-group-addon">
+                <select id="units" class="size-params">
+                  <option value="%">%</option>
+                  <option value="vw">vw</option>
+                  <option value="px">px</option>
+                </select>
+              </div>
+              <div class="input-group-addon">
+                <div class="btn-group align-params" role="group" data-toggle="buttons">
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" value="left" autocomplete="off"><i class="fa fa-align-left" aria-hidden="true"></i></input>
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" value="center" autocomplete="off"><i class="fa fa-align-center" aria-hidden="true"></i></input>
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" value="right" autocomplete="off"><i class="fa fa-align-right" aria-hidden="true"></i></input>
+                  </label>
+                </div>
+              </div>
+              <div class="input-group-addon">
+                <button type="submit" id="submit" class="btn btn-primary">OK</button>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div id="bmfw-bodymovin-container" class="bmfw-bodymovin-container"></div>
+            </div>
+        </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.6.1/bodymovin.min.js"></script>
+      <script type="text/javascript" src="../bodymovin-for-wordpress-editor-dialog-bundle.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+.bmfw-bodymovin-container{
+  position: relative;
+  >div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &.bmfw-align-left{
+    float: left;
+  }
+  &.bmfw-align-right{
+    float: right;
+  }
+  &.bmfw-align-center{
+    margin: 0 auto;
+  }
+}

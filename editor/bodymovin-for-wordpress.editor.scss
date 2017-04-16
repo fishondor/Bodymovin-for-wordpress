@@ -1,0 +1,38 @@
+$animationTime: 800ms;
+@keyframes play {
+   100% { background-position: 135px 0; }
+}
+.bmfw-bodymovin-container{
+  background-color: #EFEBEA;
+  position: relative;
+  border: 1px solid #BCD6C6;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: url('../assets/rabbit_out_spritesheet_small.png');
+  &::after{
+    content: "bodymovin animation \a" attr(data-bmfw-filename);
+    display: block;
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+  }
+  &:hover{
+    animation: play 0.8s steps(5) infinite;
+  }
+  &>div{
+    display: none;
+  }
+  &.bmfw-align-left{
+    float: left;
+  }
+  &.bmfw-align-right{
+    float: right;
+  }
+  &.bmfw-align-center{
+    margin: 0 auto;
+  }
+}

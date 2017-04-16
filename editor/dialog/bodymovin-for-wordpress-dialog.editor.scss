@@ -1,0 +1,14 @@
+.bmfw-bodymovin-container{
+  &.bmfw-align-left{
+    float: left;
+  }
+  &.bmfw-align-right{
+    float: right;
+  }
+  &.bmfw-align-center{
+    margin: 0 auto;
+  }
+}
+label{
+  margin-bottom: 0;
+}
