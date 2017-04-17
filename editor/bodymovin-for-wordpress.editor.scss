@@ -1,7 +1,3 @@
-$animationTime: 800ms;
-@keyframes play {
-   100% { background-position: 135px 0; }
-}
 .bmfw-bodymovin-container{
   background-color: #EFEBEA;
   position: relative;
@@ -9,7 +5,6 @@ $animationTime: 800ms;
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
-  background-image: url('../assets/rabbit_out_spritesheet_small.png');
   &::after{
     content: "bodymovin animation \a" attr(data-bmfw-filename);
     display: block;
@@ -19,9 +14,6 @@ $animationTime: 800ms;
     transform: translateY(-50%);
     width: 100%;
     text-align: center;
-  }
-  &:hover{
-    animation: play 0.8s steps(5) infinite;
   }
   &>div{
     display: none;
