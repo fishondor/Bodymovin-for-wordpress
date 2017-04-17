@@ -14,7 +14,7 @@ import {BodymovinForWP} from './BodymovinForWP.js';
               if(currentElement.hasClass(BodymovinForWP.CLASS_BODYMOVIN_CONTAINER)){
                 open_bodymovin_for_wordpress_dialog(BodymovinForWP.fromHtml(currentElement)).then(
                   function(bodymovinElement){
-                    currentElement.replaceWith(bodymovinElement.wrapperTemplate() + "&nbsp;");
+                    currentElement.replaceWith(bodymovinElement.wrapperTemplate());
                     ed.windowManager.close();
                   }
                 ).catch(
