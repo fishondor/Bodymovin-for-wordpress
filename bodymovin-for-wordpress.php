@@ -36,6 +36,7 @@ function bodymovin_for_wordpress_myme_types($mime_types){
 
 function bodymovin_for_wordpress_script(){
     wp_enqueue_script('bodymovin_for_wordpress_script', plugins_url( 'bodymovin-for-wordpress-front-bundle.js', __FILE__ ));
+    wp_enqueue_style( 'bodymovin_for_wordpress_style', plugins_url( 'css/bodymovin-for-wordpress-front.css', __FILE__ ) );
 }
 
 

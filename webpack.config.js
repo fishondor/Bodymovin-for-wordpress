@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
 module.exports = {
@@ -31,9 +32,25 @@ module.exports = {
       {
         test: /\.(png|jpg)$/,
         loader: "file-loader?name=[path][name].[ext]"
+      },
+      {
+        test: /bodymovin-for-wordpress.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //resolve-url-loader may be chained before sass-loader if necessary
+          use: ['css-loader', 'sass-loader']
+        })
       }
    ]
   },
+  plugins: [
+    new ExtractTextPlugin({
+      filename:  (getPath) => {
+        return getPath('css/[name].css').replace('css/js', 'css');
+      },
+      allChunks: true
+    })
+  ],
   output: {
     filename: '[name]-bundle.js',
     path: path.resolve(__dirname, '../../plugins/bodymovin-for-wordpress')
