@@ -2,10 +2,10 @@ import {Utils} from './utils.js';
 
 const CLASS_BODYMOVIN = "bodymovin",
       CLASS_BODYMOVIN_CONTAINER = "bmfw-bodymovin-container";
-const CLASSES_ALIGN = {left : "bmfw-align-left",
-                                right : "bmfw-align-right",
-                                center : "bmfw-align-center",
-                                none : "bmfw-align-none"};
+const CLASSES_ALIGN = {left : "alignleft",
+                                right : "alignright",
+                                center : "aligncenter",
+                                none : "alignnone"};
 
 export class BodymovinForWP{
 
