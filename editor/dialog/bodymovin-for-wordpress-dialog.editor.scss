@@ -1,12 +1,18 @@
 .bmfw-bodymovin-container{
-  &.bmfw-align-left{
+  &.alignnone {
+    margin: 5px 20px 20px 0;
+  }
+  &.aligncenter{
+    display: block;
+    margin: 5px auto 5px auto;
+  }
+  &.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+  }
+  &.alignleft {
     float: left;
-  }
-  &.bmfw-align-right{
-    float: right;
-  }
-  &.bmfw-align-center{
-    margin: 0 auto;
+    margin: 5px 20px 20px 0;
   }
 }
 label{
