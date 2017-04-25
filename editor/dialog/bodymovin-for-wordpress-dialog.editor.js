@@ -5,7 +5,6 @@ import {BodymovinForWP} from '../BodymovinForWP.js';
 var passed_arguments = top.tinymce.activeEditor.windowManager.getParams();
 var $ = passed_arguments.jquery;
 var jq_context = document.getElementsByTagName("body")[0];
-var wp = passed_arguments.wp;
 var editor = passed_arguments.editor;
 var bodymovinForWp = passed_arguments.bodymovinForWp;
 
@@ -28,9 +27,10 @@ $(document, jq_context).ready(function(){
 
   widthInput.val(width);
   widthUnits.val(units);
-
   bodymovinContainer.css('width', width + units);
   setContainerAlignment(bodymovinContainer, bodymovinForWp.alignClass);
+  $('.align-params label input[value=' + bodymovinForWp.alignClass + ']', jq_context)
+      .parent().addClass('active');
 
   $('.size-params', jq_context).change(function(){
     var widthInputVal = widthInput.val();
@@ -41,9 +41,6 @@ $(document, jq_context).ready(function(){
     bodymovinForWp.width = widthInputVal;
     bodymovinForWp.sizeUnits = widthUnitsVal;
   });
-  
-  $('.align-params label input[value=' + bodymovinForWp.alignClass + ']', jq_context)
-      .parent().addClass('active');
 
   $('.align-params label', jq_context).click(function() {
     var alignKey = $(this).children('input[type=radio]').val();
@@ -55,6 +52,7 @@ $(document, jq_context).ready(function(){
     e.preventDefault();
     bodymovinForWp.sizeRatio = (bodymovinContainer.height() / bodymovinContainer.width()).toFixed(2);
     resolve(bodymovinForWp);
+    editor.windowManager.close();
   });
 });
 

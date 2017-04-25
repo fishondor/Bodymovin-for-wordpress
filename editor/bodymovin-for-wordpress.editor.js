@@ -15,7 +15,6 @@ import {BodymovinForWP} from './BodymovinForWP.js';
                 open_bodymovin_for_wordpress_dialog(BodymovinForWP.fromHtml(currentElement)).then(
                   function(bodymovinElement){
                     currentElement.replaceWith(bodymovinElement.wrapperTemplate());
-                    ed.windowManager.close();
                   }
                 ).catch(
                   function(error){
