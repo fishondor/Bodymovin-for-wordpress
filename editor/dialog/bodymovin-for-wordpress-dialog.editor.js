@@ -1,10 +1,8 @@
-require('style-loader!css-loader!postcss-loader!sass-loader!./bodymovin-for-wordpress-dialog.editor.scss');
+require('./bodymovin-for-wordpress-dialog.editor.scss');
 
 import {BodymovinForWP} from '../BodymovinForWP.js';
 
 var passed_arguments = top.tinymce.activeEditor.windowManager.getParams();
-var $ = passed_arguments.jquery;
-var jq_context = document.getElementsByTagName("body")[0];
 var editor = passed_arguments.editor;
 var bodymovinForWp = passed_arguments.bodymovinForWp;
 
@@ -16,23 +14,23 @@ var units = bodymovinForWp.sizeUnits;
 
 var alignOptionsClasses = BodymovinForWP.CLASSES_ALIGN;
 
-$(document, jq_context).ready(function(){
+$(document).ready(function(){
 
-  var bodymovinContainer = $('#bmfw-bodymovin-container', jq_context);
+  var bodymovinContainer = $('#bmfw-bodymovin-container');
 
   bodymovinContainer.append(bodymovinForWp.innerTemplate());
 
-  var widthInput = $('input#width', jq_context);
-  var widthUnits = $('select#units', jq_context);
+  var widthInput = $('input#width');
+  var widthUnits = $('select#units');
 
   widthInput.val(width);
   widthUnits.val(units);
   bodymovinContainer.css('width', width + units);
   setContainerAlignment(bodymovinContainer, bodymovinForWp.alignClass);
-  $('.align-params label input[value=' + bodymovinForWp.alignClass + ']', jq_context)
+  $('.align-params label input[value=' + bodymovinForWp.alignClass + ']')
       .parent().addClass('active');
 
-  $('.size-params', jq_context).change(function(){
+  $('.size-params').change(function(){
     var widthInputVal = widthInput.val();
     var widthUnitsVal = widthUnits.val();
     bodymovinContainer.css('width', widthInputVal + widthUnitsVal);
@@ -42,13 +40,13 @@ $(document, jq_context).ready(function(){
     bodymovinForWp.sizeUnits = widthUnitsVal;
   });
 
-  $('.align-params label', jq_context).click(function() {
+  $('.align-params label').click(function() {
     var alignKey = $(this).children('input[type=radio]').val();
     setContainerAlignment(bodymovinContainer, alignKey);
     bodymovinForWp.alignClass = alignKey;
   });
 
-  $('#submit', jq_context).click(function(e){
+  $('#submit').click(function(e){
     e.preventDefault();
     bodymovinForWp.sizeRatio = (bodymovinContainer.height() / bodymovinContainer.width()).toFixed(2);
     resolve(bodymovinForWp);
