@@ -1,4 +1,4 @@
-var editorStyle = require('to-string-loader!css-loader!sass-loader!postcss-loader!./bodymovin-for-wordpress.editor.scss');
+require('./bodymovin-for-wordpress.editor.scss');
 
 var dialogUrl = require("./dialog/bodymovin-for-wordpress-dialog.editor.html");
 
@@ -8,7 +8,6 @@ import {BodymovinForWP} from './BodymovinForWP.js';
   jQuery(function($) {
      tinymce.create('tinymce.plugins.BodymovinForWp', {
           init : function(ed, url) {
-            ed.contentStyles.push(editorStyle);
             ed.onClick.add(function(ed, e) {
               var currentElement = $(e.target);
               if(currentElement.hasClass(BodymovinForWP.CLASS_BODYMOVIN_CONTAINER)){
@@ -35,8 +34,6 @@ import {BodymovinForWP} from './BodymovinForWP.js';
                   },
                   {
                       editor: ed,
-                      jquery: jQuery,
-                      wp: wp,
                       bodymovinForWp: bodymovinForWp,
                       resolve: resolve,
                       reject: reject

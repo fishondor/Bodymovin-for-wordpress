@@ -17,6 +17,7 @@ add_filter( 'upload_mimes', 'bodymovin_for_wordpress_myme_types', 1, 1 );
 function bodymovin_for_wordpress() {
      if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
           add_filter( 'mce_external_plugins', 'add_bodymovin_for_wordpress_tinymce_plugin' );
+          add_editor_style( plugins_url( 'css/bodymovin-for-wordpress-editor.css', __FILE__ ) );
      }
 }
 
