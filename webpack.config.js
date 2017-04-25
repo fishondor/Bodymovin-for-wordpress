@@ -11,9 +11,9 @@ module.exports = {
   },
   module: {
     rules: [
-    {
-       test: /\.html$/,
-       loaders: 'file-loader?name=/templates/[name].[ext]?[hash]!extract-loader!html-loader'
+     {
+        test: /\.html$/,
+        loaders: 'file-loader?name=/templates/[name].[ext]?[hash]!extract-loader!html-loader'
      },
      {
         test: /\.js$/,
@@ -34,7 +34,7 @@ module.exports = {
         loader: "file-loader?name=[path][name].[ext]"
       },
       {
-        test: /bodymovin-for-wordpress.scss$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           //resolve-url-loader may be chained before sass-loader if necessary
