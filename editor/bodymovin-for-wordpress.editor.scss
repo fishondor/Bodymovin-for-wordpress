@@ -6,7 +6,7 @@
   cursor: pointer;
   overflow: hidden;
   &::after{
-    content: "bodymovin animation \a" attr(data-bmfw-filename);
+    content: "bodymovin animation " attr(data-bmfw-filename);
     display: block;
     font-style: italic;
     position: absolute;
